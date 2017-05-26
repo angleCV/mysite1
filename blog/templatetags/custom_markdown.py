@@ -14,11 +14,11 @@ register = template.Library()
 @stringfilter  #希望字符串作为参数
 def custom_markdown(value):
     #extensions = ["nl2br", ]
-
     return mark_safe(markdown.markdown(value,
-        extensions = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite'],
-                                       safe_mode=True,
-                                       enable_attributes=False))
+        extensions = ['markdown.extensions.fenced_code',
+                      'markdown.extensions.codehilite'],
+        safe_mode=True,
+        enable_attributes=False))
     # return mark_safe(markdown2.markdown(force_text(value),
        # extras=["fenced-code-blocks", "cuddled-lists", "metadata", "tables", "spoiler"]))
     

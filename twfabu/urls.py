@@ -10,3 +10,4 @@ urlpatterns = [
     url(r'^test_list$', views.test_list, name='text_list'), ## buttom test
     url(r'^new_append$', views.new_append, name="ul_new_append"),
 ]
+

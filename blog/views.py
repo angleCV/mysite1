@@ -14,7 +14,7 @@ from .models import Article
 # Create your views here.
 def home(request):
     posts = Article.objects.all()  #获取全部的Article对象
-    '''
+
     paginator = Paginator(posts, 3) #每页显示两个
     page = request.GET.get('page')
     try :
@@ -23,14 +23,9 @@ def home(request):
         post_list = paginator.page(1)
     except EmptyPage :
         post_list = paginator.paginator(paginator.num_pages)
-    '''
-    print("运行了没")
-    print(posts)
-    for x in posts:
-        print(x.title)
-        print(x.content)
-        print(x.tag.all)
-    return render(request, 'home.html', {'post_list': posts, })
+
+
+    return render(request, 'home.html', {'post_list': post_list, })
 
 
 def detail(request, id):
@@ -39,7 +34,7 @@ def detail(request, id):
         tags = post.tag.all()
     except Article.DoesNotExist:
         raise Http404
-    return render(request, 'post.html', {'post': post, 'tags': tags,})
+    return render(request, 'detail.html', {'post': post, 'tags': tags,})
 
 
 def archives(request):
@@ -51,15 +46,15 @@ def archives(request):
         'post_list' : post_list,
         'error': False
     }
-    return render(request, 'archives.html', data)
+    return render(request, 'detail.html', data)
 
 
-def search_tag(request, tag) :
+def search_tag(request, tag):
     try:
         post_list = Article.objects.filter(category__iexact=tag) #contains
     except Article.DoesNotExist :
         raise Http404
-    return render(request, 'tag.html', {'post_list': post_list})
+    return render(request, 'home.html', {'post_list': post_list})
 
 
 def about_me(request) :
@@ -76,19 +71,35 @@ def blog_search(request):
             if len(post_list) == 0 :
                 return render(request,'archives.html', {'post_list' : post_list,
                                                     'error' : True})
-            else :
+            else:
                 return render(request,'archives.html', {'post_list' : post_list,
                                                     'error' : False})
     return redirect('/')
 
 
-class RSSFeed(Feed) :
+def test(request):
+
+    data = {
+        "post": Article.objects.get(id=5),
+    }
+
+    return render(request, "test.html", data)
+
+
+def t1(request):
+    data = {
+        "post": Article.objects.get(id=5),
+    }
+    return render(request, "post.html", data)
+
+
+class RSSFeed(Feed):
     title = "RSS feed - article"
     link = "feeds/posts/"
     description = "RSS feed - blog posts"
 
     def items(self):
-        return Article.objects.order_by('-date_time')
+        return Article.objects.order_by('-pub_date')
 
     def item_title(self, item):
         return item.title

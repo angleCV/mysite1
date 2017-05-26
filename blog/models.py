@@ -1,7 +1,27 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from DjangoUeditor.models import UEditorField
-# Create your models here.
+from markdown import markdown
+
+
+class Author(models.Model):
+    user = models.OneToOneField(User)
+
+    def __str__(self):
+        if self.user.first_name and self.user.last_name:
+            return "%s %s" % (self.user.first_name, self.user.last_name)
+        else:
+            return self.user.username
+
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Author.objects.create(user=instance)
+
+    models.signals.post_save.connect(create_user_profile, sender=User)
+
+    def live_entry_set(self):
+        return self.entry_set.filter(status=Entry.LIVE_STATUS)
 
 
 class Tag(models.Model):
@@ -23,8 +43,7 @@ class Article(models.Model):
         toolbars='full', filePath='uploads/blog/files/%(basename)s_%(datetime)s.%(extname)s')
     published = models.BooleanField('正式发布',default=True)
     pub_date = models.DateTimeField('发表日期')
-    author = models.CharField('作者',default='章半仙',max_length=255)
-    sourcefrom = models.CharField('来源',default='本网',max_length=255)
+    author = models.ManyToManyField(Author)
     slug_url = models.CharField('默认网址勿改',default='./#',max_length=255)
     tag = models.ManyToManyField(Tag, blank=True)
 
