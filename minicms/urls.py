@@ -23,8 +23,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
 	url(r'^twfb/',include('twfabu.urls')),
-    url(r'^blog/', include('blog.urls')),
+    url(r'^focus/', include('focus.urls')),
+    url(r'^weixin/', include('weixin.urls')),
 
+    ##set more
 ]
 
 if settings.DEBUG:

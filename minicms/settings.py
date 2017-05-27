@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+# the setting of focus_app
+AUTH_USER_MODEL = "focus.NewUser"
+LOGIN_URL = "/focus/login/?next='article_id'"
 
 # Application definition
 
@@ -39,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'DjangoUeditor',
 	'twfabu',
-    'blog',
+    'focus',
+    'weixin',
 ]
 
 MIDDLEWARE_CLASSES = [

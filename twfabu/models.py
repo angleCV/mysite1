@@ -1,10 +1,9 @@
 from django.db import models
-import datetime
-from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from DjangoUeditor.models import UEditorField
 
 
+@python_2_unicode_compatible
 class Item(models.Model):
     #img = models.ImageField(upload_to='pic', default= None)
     realname = models.CharField(max_length=30, default="None")
@@ -19,6 +18,8 @@ class Item(models.Model):
     def __str__(self):
         return str(self.dt)+"_"+str(self.realname)+":"+str(self.content)
 
+
+@python_2_unicode_compatible
 class LastPostID(models.Model):
     postdt = models.DateTimeField('DatetimeCommit')
     postid = models.IntegerField()
