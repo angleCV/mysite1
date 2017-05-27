@@ -27,7 +27,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(80) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `auth_group` (
 
 LOCK TABLES `auth_group` WRITE;
 /*!40000 ALTER TABLE `auth_group` DISABLE KEYS */;
+INSERT INTO `auth_group` VALUES (1,'No');
 /*!40000 ALTER TABLE `auth_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +83,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permissi_content_type_id_2f476e4b_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,98 +92,8 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add group',2,'add_group'),(5,'Can change group',2,'change_group'),(6,'Can delete group',2,'delete_group'),(7,'Can add user',3,'add_user'),(8,'Can change user',3,'change_user'),(9,'Can delete user',3,'delete_user'),(10,'Can add permission',4,'add_permission'),(11,'Can change permission',4,'change_permission'),(12,'Can delete permission',4,'delete_permission'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add 安全热点',7,'add_focusarticle'),(20,'Can change 安全热点',7,'change_focusarticle'),(21,'Can delete 安全热点',7,'delete_focusarticle'),(22,'Can add 安全法治',8,'add_lawarticle'),(23,'Can change 安全法治',8,'change_lawarticle'),(24,'Can delete 安全法治',8,'delete_lawarticle'),(25,'Can add 管理政策',9,'add_policyarticle'),(26,'Can change 管理政策',9,'change_policyarticle'),(27,'Can delete 管理政策',9,'delete_policyarticle'),(28,'Can add 趣味科普',10,'add_popularscience'),(29,'Can change 趣味科普',10,'change_popularscience'),(30,'Can delete 趣味科普',10,'delete_popularscience'),(31,'Can add 人才培养',11,'add_talentsarticle'),(32,'Can change 人才培养',11,'change_talentsarticle'),(33,'Can delete 人才培养',11,'delete_talentsarticle'),(34,'Can add 前沿技术',12,'add_techarticle'),(35,'Can change 前沿技术',12,'change_techarticle'),(36,'Can delete 前沿技术',12,'delete_techarticle'),(37,'Can add 首页轮播图片',13,'add_slideimage'),(38,'Can change 首页轮播图片',13,'change_slideimage'),(39,'Can delete 首页轮播图片',13,'delete_slideimage'),(40,'Can add 首页管理政策图片',14,'add_policyhomeimage'),(41,'Can change 首页管理政策图片',14,'change_policyhomeimage'),(42,'Can delete 首页管理政策图片',14,'delete_policyhomeimage'),(43,'Can add 成果展示',15,'add_fruitarticle'),(44,'Can change 成果展示',15,'change_fruitarticle'),(45,'Can delete 成果展示',15,'delete_fruitarticle'),(46,'Can add 首页中部栏左侧图片',16,'add_homeimage'),(47,'Can change 首页中部栏左侧图片',16,'change_homeimage'),(48,'Can delete 首页中部栏左侧图片',16,'delete_homeimage'),(49,'Can add 行业资讯',17,'add_infoarticle'),(50,'Can change 行业资讯',17,'change_infoarticle'),(51,'Can delete 行业资讯',17,'delete_infoarticle'),(52,'Can add 新闻中心',18,'add_newsarticle'),(53,'Can change 新闻中心',18,'change_newsarticle'),(54,'Can delete 新闻中心',18,'delete_newsarticle'),(55,'Can add 产品和服务',19,'add_productarticle'),(56,'Can change 产品和服务',19,'change_productarticle'),(57,'Can delete 产品和服务',19,'delete_productarticle'),(58,'Can add 中心介绍',20,'add_introarticle'),(59,'Can change 中心介绍',20,'change_introarticle'),(60,'Can delete 中心介绍',20,'delete_introarticle'),(61,'Can add 成果展示',21,'add_fruitarticle'),(62,'Can change 成果展示',21,'change_fruitarticle'),(63,'Can delete 成果展示',21,'delete_fruitarticle'),(64,'Can add 首页中部栏左侧图片',22,'add_homeimage'),(65,'Can change 首页中部栏左侧图片',22,'change_homeimage'),(66,'Can delete 首页中部栏左侧图片',22,'delete_homeimage'),(67,'Can add 行业资讯',23,'add_infoarticle'),(68,'Can change 行业资讯',23,'change_infoarticle'),(69,'Can delete 行业资讯',23,'delete_infoarticle'),(70,'Can add 新闻中心',24,'add_newsarticle'),(71,'Can change 新闻中心',24,'change_newsarticle'),(72,'Can delete 新闻中心',24,'delete_newsarticle'),(73,'Can add 产品和服务',25,'add_productarticle'),(74,'Can change 产品和服务',25,'change_productarticle'),(75,'Can delete 产品和服务',25,'delete_productarticle'),(76,'Can add 中心介绍',26,'add_introarticle'),(77,'Can change 中心介绍',26,'change_introarticle'),(78,'Can delete 中心介绍',26,'delete_introarticle'),(79,'Can add item',27,'add_item'),(80,'Can change item',27,'change_item'),(81,'Can delete item',27,'delete_item'),(82,'Can add last post id',28,'add_lastpostid'),(83,'Can change last post id',28,'change_lastpostid'),(84,'Can delete last post id',28,'delete_lastpostid');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add group',2,'add_group'),(5,'Can change group',2,'change_group'),(6,'Can delete group',2,'delete_group'),(7,'Can add permission',3,'add_permission'),(8,'Can change permission',3,'change_permission'),(9,'Can delete permission',3,'delete_permission'),(10,'Can add content type',4,'add_contenttype'),(11,'Can change content type',4,'change_contenttype'),(12,'Can delete content type',4,'delete_contenttype'),(13,'Can add session',5,'add_session'),(14,'Can change session',5,'change_session'),(15,'Can delete session',5,'delete_session'),(16,'Can add item',6,'add_item'),(17,'Can change item',6,'change_item'),(18,'Can delete item',6,'delete_item'),(19,'Can add last post id',7,'add_lastpostid'),(20,'Can change last post id',7,'change_lastpostid'),(21,'Can delete last post id',7,'delete_lastpostid'),(22,'Can add column',8,'add_column'),(23,'Can change column',8,'change_column'),(24,'Can delete column',8,'delete_column'),(25,'Can add comment',9,'add_comment'),(26,'Can change comment',9,'change_comment'),(27,'Can delete comment',9,'delete_comment'),(28,'Can add article',10,'add_article'),(29,'Can change article',10,'change_article'),(30,'Can delete article',10,'delete_article'),(31,'Can add poll',11,'add_poll'),(32,'Can change poll',11,'change_poll'),(33,'Can delete poll',11,'delete_poll'),(34,'Can add author',12,'add_author'),(35,'Can change author',12,'change_author'),(36,'Can delete author',12,'delete_author'),(37,'Can add user',13,'add_newuser'),(38,'Can change user',13,'change_newuser'),(39,'Can delete user',13,'delete_newuser'),(40,'Can add 首页中部栏左侧图片',14,'add_imagestory'),(41,'Can change 首页中部栏左侧图片',14,'change_imagestory'),(42,'Can delete 首页中部栏左侧图片',14,'delete_imagestory'),(43,'Can add 微信文章',15,'add_weixinarticle'),(44,'Can change 微信文章',15,'change_weixinarticle'),(45,'Can delete 微信文章',15,'delete_weixinarticle');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `auth_user`
---
-
-DROP TABLE IF EXISTS `auth_user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `auth_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `password` varchar(128) NOT NULL,
-  `last_login` datetime(6) DEFAULT NULL,
-  `is_superuser` tinyint(1) NOT NULL,
-  `username` varchar(150) NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `last_name` varchar(30) NOT NULL,
-  `email` varchar(254) NOT NULL,
-  `is_staff` tinyint(1) NOT NULL,
-  `is_active` tinyint(1) NOT NULL,
-  `date_joined` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `auth_user`
---
-
-LOCK TABLES `auth_user` WRITE;
-/*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$30000$HGQy0q0cEDGy$JPRtayzLB8hWLcCKoRxFwI+pZTP9XNN/TAxc4VXQKEg=',NULL,1,'lenovo','','','',1,1,'2017-05-22 03:49:26.543682'),(2,'pbkdf2_sha256$30000$o9mvlM7jsjbB$RjP2S5LqSAgT8dBPqlUNeHnGJmh9CmVc5b8b/G6otek=','2017-05-25 03:29:57.570117',1,'actanble','','','actanble@163.com',1,1,'2017-05-22 03:49:59.376560');
-/*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `auth_user_groups`
---
-
-DROP TABLE IF EXISTS `auth_user_groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `auth_user_groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `group_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `auth_user_groups_user_id_94350c0c_uniq` (`user_id`,`group_id`),
-  KEY `auth_user_groups_group_id_97559544_fk_auth_group_id` (`group_id`),
-  CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
-  CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `auth_user_groups`
---
-
-LOCK TABLES `auth_user_groups` WRITE;
-/*!40000 ALTER TABLE `auth_user_groups` DISABLE KEYS */;
-/*!40000 ALTER TABLE `auth_user_groups` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `auth_user_user_permissions`
---
-
-DROP TABLE IF EXISTS `auth_user_user_permissions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `auth_user_user_permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `permission_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `auth_user_user_permissions_user_id_14a6b632_uniq` (`user_id`,`permission_id`),
-  KEY `auth_user_user_perm_permission_id_1fbb5f2c_fk_auth_permission_id` (`permission_id`),
-  CONSTRAINT `auth_user_user_perm_permission_id_1fbb5f2c_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
-  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `auth_user_user_permissions`
---
-
-LOCK TABLES `auth_user_user_permissions` WRITE;
-/*!40000 ALTER TABLE `auth_user_user_permissions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `auth_user_user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -203,10 +114,10 @@ CREATE TABLE `django_admin_log` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` (`content_type_id`),
-  KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
+  KEY `django_admin_log_user_id_c564eba6_fk_focus_newuser_id` (`user_id`),
   CONSTRAINT `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
-  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8;
+  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_focus_newuser_id` FOREIGN KEY (`user_id`) REFERENCES `focus_newuser` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +126,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2017-05-22 07:43:59.699960','1','2017-05-22 15:42:26+08:00_作者测试1:<p>万能示例; ---<br/>初始值。。。<br/></p>',1,'[{\"added\": {}}]',27,2),(2,'2017-05-22 07:44:59.341371','2','2017-05-22 15:44:56+08:00_作者2:<p>插入图片1<br/><img src=\"http://maps.googleapis.com/maps/api/staticmap?center=30.601749009392254,114.29107699999997&zoom=16&size=520x340&maptype=roadmap&markers=30.601749,1',1,'[{\"added\": {}}]',27,2),(3,'2017-05-22 07:47:07.469700','3','2017-05-22 15:47:06+08:00_测试3:<p><img src=\"http://api.map.baidu.com/staticimage?center=116.404,39.915&zoom=10&width=530&height=340&markers=116.404,39.915\" width=\"530\" height=\"340\"/></p>',1,'[{\"added\": {}}]',27,2),(4,'2017-05-22 07:47:58.111596','4','2017-05-22 15:47:56+08:00_None:<p>1111<br/></p>',1,'[{\"added\": {}}]',27,2),(5,'2017-05-22 09:14:51.108763','90','新闻中心 30 个批处理',3,'',24,2),(6,'2017-05-22 09:14:51.214769','89','新闻中心 29 个批处理',3,'',24,2),(7,'2017-05-22 09:14:51.278773','88','新闻中心 28 个批处理',3,'',24,2),(8,'2017-05-22 09:14:51.347776','87','新闻中心 27 个批处理',3,'',24,2),(9,'2017-05-22 09:14:51.397779','86','新闻中心 26 个批处理',3,'',24,2),(10,'2017-05-22 09:14:51.422781','85','新闻中心 25 个批处理',3,'',24,2),(11,'2017-05-22 09:14:51.470784','84','新闻中心 24 个批处理',3,'',24,2),(12,'2017-05-22 09:14:51.522786','83','新闻中心 23 个批处理',3,'',24,2),(13,'2017-05-22 09:14:51.547788','82','新闻中心 22 个批处理',3,'',24,2),(14,'2017-05-22 09:14:51.572789','81','新闻中心 21 个批处理',3,'',24,2),(15,'2017-05-22 09:14:51.601791','80','新闻中心 20 个批处理',3,'',24,2),(16,'2017-05-22 09:14:51.699797','79','新闻中心 19 个批处理',3,'',24,2),(17,'2017-05-22 09:14:51.731798','78','新闻中心 18 个批处理',3,'',24,2),(18,'2017-05-22 09:14:51.756800','77','新闻中心 17 个批处理',3,'',24,2),(19,'2017-05-22 09:14:51.814803','76','新闻中心 16 个批处理',3,'',24,2),(20,'2017-05-22 09:14:51.839805','75','新闻中心 15 个批处理',3,'',24,2),(21,'2017-05-22 09:14:51.864806','74','新闻中心 14 个批处理',3,'',24,2),(22,'2017-05-22 09:14:51.889807','73','新闻中心 13 个批处理',3,'',24,2),(23,'2017-05-22 09:14:51.914809','72','新闻中心 12 个批处理',3,'',24,2),(24,'2017-05-22 09:14:51.973812','71','新闻中心 11 个批处理',3,'',24,2),(25,'2017-05-22 09:14:51.998814','70','新闻中心 10 个批处理',3,'',24,2),(26,'2017-05-22 09:14:52.022815','69','新闻中心 9 个批处理',3,'',24,2),(27,'2017-05-22 09:14:52.047817','68','新闻中心 8 个批处理',3,'',24,2),(28,'2017-05-22 09:14:52.073818','67','新闻中心 7 个批处理',3,'',24,2),(29,'2017-05-22 09:14:52.107820','66','新闻中心 6 个批处理',3,'',24,2),(30,'2017-05-22 09:14:52.139822','65','新闻中心 5 个批处理',3,'',24,2),(31,'2017-05-22 09:14:52.165823','64','新闻中心 4 个批处理',3,'',24,2),(32,'2017-05-22 09:14:52.197825','63','新闻中心 3 个批处理',3,'',24,2),(33,'2017-05-22 09:14:52.222827','62','新闻中心 2 个批处理',3,'',24,2),(34,'2017-05-22 09:14:52.247828','61','新闻中心 1 个批处理',3,'',24,2),(35,'2017-05-22 09:14:52.306831','60','新闻中心 30 个批处理',3,'',24,2),(36,'2017-05-22 09:14:52.331833','59','新闻中心 29 个批处理',3,'',24,2),(37,'2017-05-22 09:14:52.356834','58','新闻中心 28 个批处理',3,'',24,2),(38,'2017-05-22 09:14:52.381836','57','新闻中心 27 个批处理',3,'',24,2),(39,'2017-05-22 09:14:52.406837','56','新闻中心 26 个批处理',3,'',24,2),(40,'2017-05-22 09:14:52.439839','55','新闻中心 25 个批处理',3,'',24,2),(41,'2017-05-22 09:14:52.497842','54','新闻中心 24 个批处理',3,'',24,2),(42,'2017-05-22 09:14:52.522844','53','新闻中心 23 个批处理',3,'',24,2),(43,'2017-05-22 09:14:52.547845','52','新闻中心 22 个批处理',3,'',24,2),(44,'2017-05-22 09:14:52.572847','51','新闻中心 21 个批处理',3,'',24,2),(45,'2017-05-22 09:14:52.597848','50','新闻中心 20 个批处理',3,'',24,2),(46,'2017-05-22 09:14:52.622849','49','新闻中心 19 个批处理',3,'',24,2),(47,'2017-05-22 09:14:52.689853','48','新闻中心 18 个批处理',3,'',24,2),(48,'2017-05-22 09:14:52.714855','47','新闻中心 17 个批处理',3,'',24,2),(49,'2017-05-22 09:14:52.739856','46','新闻中心 16 个批处理',3,'',24,2),(50,'2017-05-22 09:14:52.764858','45','新闻中心 15 个批处理',3,'',24,2),(51,'2017-05-22 09:14:52.789859','44','新闻中心 14 个批处理',3,'',24,2),(52,'2017-05-22 09:14:52.814860','43','新闻中心 13 个批处理',3,'',24,2),(53,'2017-05-22 09:14:52.881864','42','新闻中心 12 个批处理',3,'',24,2),(54,'2017-05-22 09:14:52.906866','41','新闻中心 11 个批处理',3,'',24,2),(55,'2017-05-22 09:14:52.931867','40','新闻中心 10 个批处理',3,'',24,2),(56,'2017-05-22 09:14:52.956869','39','新闻中心 9 个批处理',3,'',24,2),(57,'2017-05-22 09:14:52.981870','38','新闻中心 8 个批处理',3,'',24,2),(58,'2017-05-22 09:14:53.039873','37','新闻中心 7 个批处理',3,'',24,2),(59,'2017-05-22 09:14:53.064875','36','新闻中心 6 个批处理',3,'',24,2),(60,'2017-05-22 09:14:53.089876','35','新闻中心 5 个批处理',3,'',24,2),(61,'2017-05-22 09:14:53.114878','34','新闻中心 4 个批处理',3,'',24,2),(62,'2017-05-22 09:14:53.140879','33','新闻中心 3 个批处理',3,'',24,2),(63,'2017-05-22 09:14:53.164880','32','新闻中心 2 个批处理',3,'',24,2),(64,'2017-05-22 09:14:53.222884','31','新闻中心 1 个批处理',3,'',24,2),(65,'2017-05-22 09:14:53.247885','30','新闻中心 30 个批处理',3,'',24,2),(66,'2017-05-22 09:14:53.307889','29','新闻中心 29 个批处理',3,'',24,2),(67,'2017-05-22 09:14:53.392893','28','新闻中心 28 个批处理',3,'',24,2),(68,'2017-05-22 09:14:53.456897','27','新闻中心 27 个批处理',3,'',24,2),(69,'2017-05-22 09:14:53.506900','26','新闻中心 26 个批处理',3,'',24,2),(70,'2017-05-22 09:14:53.539902','25','新闻中心 25 个批处理',3,'',24,2),(71,'2017-05-22 09:14:53.600905','24','新闻中心 24 个批处理',3,'',24,2),(72,'2017-05-22 09:14:53.670909','23','新闻中心 23 个批处理',3,'',24,2),(73,'2017-05-22 09:14:53.689910','22','新闻中心 22 个批处理',3,'',24,2),(74,'2017-05-22 09:14:53.714912','21','新闻中心 21 个批处理',3,'',24,2),(75,'2017-05-22 09:14:53.739913','20','新闻中心 20 个批处理',3,'',24,2),(76,'2017-05-22 09:14:53.789916','19','新闻中心 19 个批处理',3,'',24,2),(77,'2017-05-22 09:14:53.822918','18','新闻中心 18 个批处理',3,'',24,2),(78,'2017-05-22 09:14:53.848920','17','新闻中心 17 个批处理',3,'',24,2),(79,'2017-05-22 09:14:53.881921','16','新闻中心 16 个批处理',3,'',24,2),(80,'2017-05-22 09:14:53.906923','15','新闻中心 15 个批处理',3,'',24,2),(81,'2017-05-22 09:14:53.931924','14','新闻中心 14 个批处理',3,'',24,2),(82,'2017-05-22 09:14:53.997928','13','新闻中心 13 个批处理',3,'',24,2),(83,'2017-05-22 09:14:54.022929','12','新闻中心 12 个批处理',3,'',24,2),(84,'2017-05-22 09:14:54.047931','11','新闻中心 11 个批处理',3,'',24,2),(85,'2017-05-22 09:14:54.072932','10','新闻中心 10 个批处理',3,'',24,2),(86,'2017-05-22 09:14:54.097934','9','新闻中心 9 个批处理',3,'',24,2),(87,'2017-05-22 09:14:54.122935','8','新闻中心 8 个批处理',3,'',24,2),(88,'2017-05-22 09:14:54.181939','7','新闻中心 7 个批处理',3,'',24,2),(89,'2017-05-22 09:14:54.206940','6','新闻中心 6 个批处理',3,'',24,2),(90,'2017-05-22 09:14:54.230941','5','新闻中心 5 个批处理',3,'',24,2),(91,'2017-05-22 09:14:54.255943','4','新闻中心 4 个批处理',3,'',24,2),(92,'2017-05-22 09:14:54.281944','3','新闻中心 3 个批处理',3,'',24,2),(93,'2017-05-22 09:14:54.316946','2','新闻中心 2 个批处理',3,'',24,2),(94,'2017-05-22 09:14:54.356949','1','新闻中心 1 个批处理',3,'',24,2),(95,'2017-05-22 09:21:10.524464','120','新闻中心 30 个批处理',2,'[{\"changed\": {\"fields\": [\"toutiao\", \"content\"]}}]',24,2),(96,'2017-05-22 09:21:49.466692','120','新闻中心 30 个批处理',2,'[{\"changed\": {\"fields\": [\"toutiao\"]}}]',24,2),(97,'2017-05-22 09:27:03.241638','1','one_pic',1,'[{\"added\": {}}]',22,2),(98,'2017-05-23 00:34:49.886234','30','新闻中心 30 个批处理',3,'',23,2),(99,'2017-05-23 00:34:49.958238','29','新闻中心 29 个批处理',3,'',23,2),(100,'2017-05-23 00:34:50.011241','28','新闻中心 28 个批处理',3,'',23,2),(101,'2017-05-23 00:34:50.053243','27','新闻中心 27 个批处理',3,'',23,2),(102,'2017-05-23 00:34:50.094246','26','新闻中心 26 个批处理',3,'',23,2),(103,'2017-05-23 00:34:50.127247','25','新闻中心 25 个批处理',3,'',23,2),(104,'2017-05-23 00:34:50.160249','24','新闻中心 24 个批处理',3,'',23,2),(105,'2017-05-23 00:34:50.204252','23','新闻中心 23 个批处理',3,'',23,2),(106,'2017-05-23 00:34:50.244254','22','新闻中心 22 个批处理',3,'',23,2),(107,'2017-05-23 00:34:50.277256','21','新闻中心 21 个批处理',3,'',23,2),(108,'2017-05-23 00:34:50.310258','20','新闻中心 20 个批处理',3,'',23,2),(109,'2017-05-23 00:34:50.344260','19','新闻中心 19 个批处理',3,'',23,2),(110,'2017-05-23 00:34:50.398263','18','新闻中心 18 个批处理',3,'',23,2),(111,'2017-05-23 00:34:50.544271','17','新闻中心 17 个批处理',3,'',23,2),(112,'2017-05-23 00:34:50.579273','16','新闻中心 16 个批处理',3,'',23,2),(113,'2017-05-23 00:34:50.636277','15','新闻中心 15 个批处理',3,'',23,2),(114,'2017-05-23 00:34:50.677279','14','新闻中心 14 个批处理',3,'',23,2),(115,'2017-05-23 00:34:50.761284','13','新闻中心 13 个批处理',3,'',23,2),(116,'2017-05-23 00:34:50.802286','12','新闻中心 12 个批处理',3,'',23,2),(117,'2017-05-23 00:34:50.835288','11','新闻中心 11 个批处理',3,'',23,2),(118,'2017-05-23 00:34:50.868290','10','新闻中心 10 个批处理',3,'',23,2),(119,'2017-05-23 00:34:50.902292','9','新闻中心 9 个批处理',3,'',23,2),(120,'2017-05-23 00:34:50.968296','8','新闻中心 8 个批处理',3,'',23,2),(121,'2017-05-23 00:34:51.020298','7','新闻中心 7 个批处理',3,'',23,2),(122,'2017-05-23 00:34:51.060301','6','新闻中心 6 个批处理',3,'',23,2),(123,'2017-05-23 00:34:51.094303','5','新闻中心 5 个批处理',3,'',23,2),(124,'2017-05-23 00:34:51.127305','4','新闻中心 4 个批处理',3,'',23,2),(125,'2017-05-23 00:34:51.160306','3','新闻中心 3 个批处理',3,'',23,2),(126,'2017-05-23 00:34:51.220310','2','新闻中心 2 个批处理',3,'',23,2),(127,'2017-05-23 00:34:51.344317','1','新闻中心 1 个批处理',3,'',23,2),(128,'2017-05-23 00:50:06.149641','61','举例1',1,'[{\"added\": {}}]',23,2),(129,'2017-05-25 03:30:10.201840','5','2017-05-25 11:30:08+08:00_None-在测试:<p>aaaaa<br/></p>',1,'[{\"added\": {}}]',27,2),(130,'2017-05-25 03:42:08.774940','6','2017-05-25 11:42:07+08:00_fdsafdsf:<p>dsfdsaf<br/></p>',1,'[{\"added\": {}}]',27,2),(131,'2017-05-25 04:43:44.287640','7','2017-05-25 12:43:42+08:00_测试400:<p><img src=\"http://img.baidu.com/hi/jx2/j_0004.gif\"/></p>',1,'[{\"added\": {}}]',27,2);
+INSERT INTO `django_admin_log` VALUES (1,'2017-05-27 01:48:18.602149','1','测试1',1,'[{\"added\": {}}]',8,1),(2,'2017-05-27 01:48:45.167669','1','actanble',1,'[{\"added\": {}}]',12,1),(3,'2017-05-27 01:48:51.228015','1','1111',1,'[{\"added\": {}}]',10,1),(4,'2017-05-27 01:49:00.843565','1','1111111111111111111111111111111111',1,'[{\"added\": {}}]',9,1),(5,'2017-05-27 01:51:56.699624','1','2017-05-27 09:51:00+08:00_测试1:<p>111111111111111111<br/></p>',1,'[{\"added\": {}}]',6,1),(6,'2017-05-27 01:53:56.912499','2','22222222222',1,'[{\"added\": {}}]',10,1),(7,'2017-05-27 02:31:08.709151','3','微信开发注意事项',1,'[{\"added\": {}}]',10,1),(8,'2017-05-27 02:32:21.836333','1','111111',1,'[{\"added\": {}}]',15,1),(9,'2017-05-27 02:33:54.148613','3','微信开发注意事项',2,'[]',10,1),(10,'2017-05-27 02:39:13.361871','2','22222222222',3,'',10,1),(11,'2017-05-27 07:32:06.830016','4','werobot-Api',1,'[{\"added\": {}}]',10,1),(12,'2017-05-27 07:40:10.948706','1','No',1,'[{\"added\": {}}]',2,1),(13,'2017-05-27 07:40:56.361304','2','user1',1,'[{\"added\": {}}]',13,1),(14,'2017-05-27 07:54:08.049586','2','2017-05-27 15:54:00+08:00_作者1:<p>测试图文发布</p><p><br/></p><p><strong>粗体</strong></p><p><strong><br/></strong></p><p><img src=\"/media/uploads/images/p4_20170527155403.jpg\" title=\"\" alt=\"p4.jpg\"/></p>',1,'[{\"added\": {}}]',6,1),(15,'2017-05-27 07:54:54.520244','3','2017-05-27 15:54:00+08:00_测试2:<p>图文发布<br/></p>',1,'[{\"added\": {}}]',6,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +143,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +152,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(2,'auth','group'),(4,'auth','permission'),(3,'auth','user'),(5,'contenttypes','contenttype'),(21,'jhun','fruitarticle'),(22,'jhun','homeimage'),(23,'jhun','infoarticle'),(26,'jhun','introarticle'),(24,'jhun','newsarticle'),(25,'jhun','productarticle'),(15,'jnu','fruitarticle'),(16,'jnu','homeimage'),(17,'jnu','infoarticle'),(20,'jnu','introarticle'),(18,'jnu','newsarticle'),(19,'jnu','productarticle'),(7,'news','focusarticle'),(8,'news','lawarticle'),(9,'news','policyarticle'),(14,'news','policyhomeimage'),(10,'news','popularscience'),(13,'news','slideimage'),(11,'news','talentsarticle'),(12,'news','techarticle'),(6,'sessions','session'),(27,'twfabu','item'),(28,'twfabu','lastpostid');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(2,'auth','group'),(3,'auth','permission'),(4,'contenttypes','contenttype'),(10,'focus','article'),(12,'focus','author'),(8,'focus','column'),(9,'focus','comment'),(13,'focus','newuser'),(11,'focus','poll'),(5,'sessions','session'),(6,'twfabu','item'),(7,'twfabu','lastpostid'),(14,'weixin','imagestory'),(15,'weixin','weixinarticle');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +169,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +178,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2017-05-22 02:39:34.180893'),(2,'auth','0001_initial','2017-05-22 02:39:49.688780'),(3,'admin','0001_initial','2017-05-22 02:39:52.820959'),(4,'admin','0002_logentry_remove_auto_add','2017-05-22 02:39:52.893963'),(5,'contenttypes','0002_remove_content_type_name','2017-05-22 02:39:55.171093'),(6,'auth','0002_alter_permission_name_max_length','2017-05-22 02:39:57.029200'),(7,'auth','0003_alter_user_email_max_length','2017-05-22 02:39:58.445281'),(8,'auth','0004_alter_user_username_opts','2017-05-22 02:39:58.498284'),(9,'auth','0005_alter_user_last_login_null','2017-05-22 02:39:59.317331'),(10,'auth','0006_require_contenttypes_0002','2017-05-22 02:39:59.381334'),(11,'auth','0007_alter_validators_add_error_messages','2017-05-22 02:39:59.436337'),(12,'auth','0008_alter_user_username_max_length','2017-05-22 02:40:01.188438'),(13,'jhun','0001_initial','2017-05-22 02:40:04.014599'),(14,'jhun','0002_introarticle','2017-05-22 02:40:04.562631'),(15,'jnu','0001_initial','2017-05-22 02:40:07.185781'),(16,'jnu','0002_introarticle','2017-05-22 02:40:08.368848'),(17,'news','0001_initial','2017-05-22 02:40:11.437024'),(18,'news','0002_auto_20170318_1200','2017-05-22 02:40:11.833046'),(19,'news','0003_auto_20170318_1319','2017-05-22 02:40:17.967397'),(20,'news','0004_auto_20170318_1320','2017-05-22 02:40:24.941796'),(21,'news','0005_slideimage','2017-05-22 02:40:25.653837'),(22,'news','0006_policyhomeimage','2017-05-22 02:40:26.981913'),(23,'sessions','0001_initial','2017-05-22 02:40:27.876964'),(24,'twfabu','0001_initial','2017-05-22 07:41:59.920109');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2017-05-27 01:45:29.076453'),(2,'contenttypes','0002_remove_content_type_name','2017-05-27 01:45:30.926559'),(3,'auth','0001_initial','2017-05-27 01:45:36.338868'),(4,'auth','0002_alter_permission_name_max_length','2017-05-27 01:45:37.419930'),(5,'auth','0003_alter_user_email_max_length','2017-05-27 01:45:37.496934'),(6,'auth','0004_alter_user_username_opts','2017-05-27 01:45:37.547937'),(7,'auth','0005_alter_user_last_login_null','2017-05-27 01:45:37.599940'),(8,'auth','0006_require_contenttypes_0002','2017-05-27 01:45:37.644943'),(9,'focus','0001_initial','2017-05-27 01:46:09.862786'),(10,'admin','0001_initial','2017-05-27 01:46:16.035139'),(11,'admin','0002_logentry_remove_auto_add','2017-05-27 01:46:16.294153'),(12,'auth','0007_alter_validators_add_error_messages','2017-05-27 01:46:16.410160'),(13,'auth','0008_alter_user_username_max_length','2017-05-27 01:46:16.532167'),(14,'focus','0002_auto_20170527_0755','2017-05-27 01:46:21.019424'),(15,'focus','0003_auto_20170527_0931','2017-05-27 01:46:25.250666'),(16,'sessions','0001_initial','2017-05-27 01:46:26.116715'),(17,'twfabu','0001_initial','2017-05-27 01:46:27.331785'),(18,'weixin','0001_initial','2017-05-27 02:29:19.518905');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,579 +204,283 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('7q08lexqb4oco5o2te3rakctbugrinfu','MjBjNThlZTdmNDQyOGQyNDkzZmIxYjZiNGJjM2FiODg2YzVmMGI0NTp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxNDRlNzY0ZTQ0NjNmYjMwMmYzYjlkYzI1YzFkMzkyMGIwNWFkZDdmIn0=','2017-06-05 07:42:17.531116'),('djqwqk1hjknqpyrlsh6wdv50hir116aw','NzdlOWVlNjI4YzU3MWQ2NTE2OWFkMGI2ZjkzMGJhOWY1NjMyOGI3ZDp7Il9hdXRoX3VzZXJfaGFzaCI6IjE0NGU3NjRlNDQ2M2ZiMzAyZjNiOWRjMjVjMWQzOTIwYjA1YWRkN2YiLCJfYXV0aF91c2VyX2lkIjoiMiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=','2017-06-05 04:07:18.206978'),('w4mg7vyvqnc5dk89h7qy8wxmjucwln06','ZmM5OTAzY2U3OGFhNWM2ODAyYjkyYjhmMzVlM2U4N2I0ZDQzZDRhMTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMTQ0ZTc2NGU0NDYzZmIzMDJmM2I5ZGMyNWMxZDM5MjBiMDVhZGQ3ZiIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=','2017-06-08 03:29:57.643121');
+INSERT INTO `django_session` VALUES ('p81l68y4se5rvr9alpnan7z19nlvpkuf','NzRhMDAxMzc0ZWU0ZjBjYjNkZDkyNzAzYjMxZjdjZjk0MTg3ZWM5YTp7Il9hdXRoX3VzZXJfaGFzaCI6ImZmOWEzZmY2ZDhlMDU5YzZmMmM0YzQ1NmRlZjA4MmZhNzcwZGFkNWEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=','2017-06-10 01:47:26.463167');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `jhun_fruitarticle`
+-- Table structure for table `focus_article`
 --
 
-DROP TABLE IF EXISTS `jhun_fruitarticle`;
+DROP TABLE IF EXISTS `focus_article`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jhun_fruitarticle` (
+CREATE TABLE `focus_article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
+  `title` varchar(256) NOT NULL,
   `content` longtext NOT NULL,
+  `pub_date` datetime(6) NOT NULL,
+  `update_time` datetime(6) DEFAULT NULL,
   `published` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
+  `poll_num` int(11) NOT NULL,
+  `comment_num` int(11) NOT NULL,
+  `keep_num` int(11) NOT NULL,
+  `author_id` int(11) NOT NULL,
+  `column_id` int(11),
+  `pic` varchar(100) NOT NULL,
+  `set_top` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `focus_article_author_id_ba2809a9_fk_focus_author_id` (`author_id`),
+  KEY `focus_article_column_id_3d390601_fk_focus_column_id` (`column_id`),
+  CONSTRAINT `focus_article_author_id_ba2809a9_fk_focus_author_id` FOREIGN KEY (`author_id`) REFERENCES `focus_author` (`id`),
+  CONSTRAINT `focus_article_column_id_3d390601_fk_focus_column_id` FOREIGN KEY (`column_id`) REFERENCES `focus_column` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `focus_article`
+--
+
+LOCK TABLES `focus_article` WRITE;
+/*!40000 ALTER TABLE `focus_article` DISABLE KEYS */;
+INSERT INTO `focus_article` VALUES (1,'1111','11','2017-05-27 01:48:51.178012','2017-05-27 01:48:51.178012',1,0,0,0,1,1,'uploads/blog/images/default.jpg',1),(3,'微信开发注意事项','<blockquote><p>tips: 本文面向的对象是已经会使用django开发web后端的人员</p></blockquote><h2>微信小程序后端与普通web的区别</h2><p>微信小程序的后端开发和普通的restful API 大致上相同，只不过要注意以下几点限制</p><ul class=\" list-paddingleft-2\"><li><p>必须使用HTTPS协议请求后端服务器</p></li><li><p>不支持COOKIE</p></li><li><p>不支持django内置的user登录, 因为它使用的是微信的用户系统</p></li></ul><h2>应对方法</h2><ul class=\" list-paddingleft-2\"><li><p>对于HTTPS的限制, 很简单, 去godaddy等网站申请一个https证书, 下载后使用nginx指定即可, 可以参照<a href=\"http://www.cnblogs.com/yanghuahui/archive/2012/06/25/2561568.html\" target=\"_blank\">此文章</a>, 这篇文章的证书是自己生成的, 这里需要替换为申请的证书</p></li><li><p>不支持cookie, django原生的session机制就会失效</p></li><li><p>不支持django内置的user登录, 因为它使用的是微信的用户系统</p><p>对于上边这两个问题,我使用了<code>JWT</code>来保证了用户的在线验证. 那么什么是JWT呢, 可以看下推酷的<a href=\"http://www.tuicool.com/articles/R7Rj6r3\" target=\"_blank\">这篇文章</a>了解一下, 简要的来说就是用户登录以后, 原先保存在cookie里边的一个随机的sessionid变成了保存在http头部的<code>Authorization</code>字段的一个token值, 这个值是服务端自身加密的, 客户端无需解密, 只要服务端知道这个token对应这个用户就好, 当然这里也有很多的附加功能, 比如超时等等, 不再赘述</p><p>然而网上有很多的jwt开源项目, 比如<code>django-jwt</code>, <code>rest-framework-jwt</code>, 你都可以使用, 但是却不适用于微信小程序, 为什么这么说? 是因为这两个项目都和django内置的user相耦合, 在上边提出的第三个问题的地方会引起问题, 在尝试了<code>rest-framework-jwt</code>发现问题后, 我毅然决定自己使用<code>pyjwt</code>实现一个用户登录/鉴权的组件.</p><p>首先要知道微信小程序的登录流程是:</p><p>看起来好像步骤很多, 但是我们没有必要去重新造轮子, 早有人已经写好认证流程<a href=\"https://github.com/gusibi/python-weixin\" target=\"_blank\">python-weixin</a>我们可以省去4-6的步骤, 那么剩下的问题就是如何解决第7步也就是维持session的问题了.</p></li><ol class=\" list-paddingleft-2\"><li><p>客户端请求用户授权</p></li><li><p>用户授权成功</p></li><li><p>客户端或得到用户基本信息(包括code,没有openid的用户明文信息, 有openid的加密后的信息, 解密向量iv)</p></li><li><p>客户端把返回的信息发送到服务器</p></li><li><p>服务器使用code去微信服务器换取session_key</p></li><li><p>服务器用这个session_key+iv去解密用户密文, 得到用户完整信息(基本+openid)</p></li><li><p>将用户在服务器登录, 维持用户session(这里的失效时间微信约定是30天)</p></li></ol></ul><p>因为jwt始终使用http头部的token进行验证这里我的思路是:</p><ol class=\" list-paddingleft-2\"><li><p>微信用户登录后, 返回客户端token, 并在缓存创建用户的session信息</p></li><li><p>客户端请求时附加http头<code>Authorization=JWT &lt;token&gt;</code></p></li><li><p>使用中间件检验http头的token, 审查通过则在request上追加一个<code>jwt_user</code>属性(这里不想覆盖django自带user), 同时去缓存寻找这个用户的session信息, 加载到<code>request.jwt_session</code>, 审查如果不通过则jwt_user设置为None, jwt_session为一个空的session对象</p></li><li><p>使用认证方法, 对于需要进行登录的接口检验用户是否为<code>None</code></p></li></ol><p>到这一步就已经完成了整个的用户鉴权/session持久化流程, 如果你只是为了了解django开发小程序注意的点到这里已经可以结束了, 下边我要介绍的是我实现的一套中间件逻辑, 有兴趣可以拿去直接使用.</p><p>这里中间件我已经实现了参见<a href=\"https://github.com/weidwonder/django-jwt-session-auth\" target=\"_blank\">django-jwt-session-auth</a>, 调用模块内部的<code>jwt_login</code>函数, 登录你的用户时会返回一个token, 这个token将要返回客户端, 同时它也会做user的session缓存动作.下一次客户端带着<code>Authorization=JWT &lt;token&gt;</code>调用的时候中间件会直接将对应的user和session加载到<code>request.jwt_user</code>和<code>request.jwt_session</code>, 这里你需要设置的只有设置两个值: <code>USER_TO_PAYLOAD</code>和<code>PAYLOAD_TO_USER</code>两个方法:</p><pre class=\"hljs asciidoc\">*&nbsp;USER_TO_PAYLOAD:&nbsp;根据当前登录的用户生成一个字典payload方法*&nbsp;PAYLOAD_TO_USER:&nbsp;根据你之前生成的payload找到对应的用户</pre><blockquote><p>注: 2017.1.15我这个组件还没有完整的readme, 后续会加上</p></blockquote><p>最后, 关于认证器, 如果你使用rest-framework可以直接继承<code>BaseAuthentication</code>在<code>authenticate</code>方法里校验<code>jwt_user</code>是否为None即可, 如果直接使用django原生的view, 可以写一个装饰器装饰在类view的<code>dispatch</code>方法上或直接装饰在函数的view上.</p><p>示例</p><pre class=\"hljs python\">#&nbsp;django-jwt-session-auth设置,&nbsp;放在settings.py文件中JWT_AUTH&nbsp;=&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&#39;PAYLOAD_TO_USER&#39;:&nbsp;&#39;user.auth.payload_to_user&#39;,&nbsp;&nbsp;&nbsp;&nbsp;&#39;USER_TO_PAYLOAD&#39;:&nbsp;&#39;user.auth.user_to_payload&#39;,\r\n}#&nbsp;rest-framework验证器class&nbsp;WechatUserAuthentication(BaseAuthentication):\r\n&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;authenticate(self,&nbsp;request):\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;request.jwt_user:\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;u&#39;请先授权&#39;\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;exceptions.AuthenticationFailed(msg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(request.jwt_user,&nbsp;request.jwt_user.uuid)#&nbsp;原生django验证装饰器def&nbsp;login_required(func):&nbsp;&nbsp;&nbsp;&nbsp;@wraps(func)\r\n&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;verify_login(request,&nbsp;*args,&nbsp;**kwargs):\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;request.jwt_user:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;func(request,&nbsp;*args,&nbsp;**kwargs)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;返回HTTP_401\r\n&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;verify_login</pre><p>&nbsp; &nbsp; &nbsp; &nbsp;</p><p><br/></p>','2017-05-27 02:31:08.606145','2017-05-27 02:33:54.139613',1,0,0,0,1,1,'uploads/blog/images/default.jpg',1),(4,'werobot-Api','<h1>API</h1><p><span id=\"id1\"></span></p><h2>应用对象</h2><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.robot.</code><code class=\"descname\">BaseRoBot</code><span class=\"sig-paren\">(</span><em>token=None</em>, <em>logger=None</em>, <em>enable_session=None</em>, <em>session_storage=None</em>, <em>app_id=None</em>, <em>app_secret=None</em>, <em>encoding_aes_key=None</em>, <em>config=None</em>, <em>**kwargs</em><span class=\"sig-paren\">)</span></p></li><li><p>BaseRoBot 是整个应用的核心对象，负责提供 handler 的维护，消息和事件的处理等核心功能。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr></tbody></table><p class=\"first admonition-title\">注解</p><p class=\"last\">对于下面的参数推荐使用 <a class=\"reference internal\" href=\"https://werobot.readthedocs.io/zh_CN/latest/api.html#werobot.config.Config\" title=\"werobot.config.Config\"><code class=\"xref py py-class docutils literal\"><span class=\"pre\">Config</span></code></a> 进行设置， &nbsp; &nbsp;并且以下参数均已 <strong>deprecated</strong>。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr></tbody></table></li><ul class=\"method list-paddingleft-2\" style=\"list-style-type: square;\"><li><p><code class=\"descname\">voice</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为语音 <code class=\"docutils literal\"><span class=\"pre\">(voice)</span></code> 消息添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">view</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为链接 <code class=\"docutils literal\"><span class=\"pre\">(view)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">unsubscribe</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为被取消关注 <code class=\"docutils literal\"><span class=\"pre\">(unsubscribe)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">unknown_event</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为未知类型 <code class=\"docutils literal\"><span class=\"pre\">(unknown_event)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">unknown</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为未知类型 <code class=\"docutils literal\"><span class=\"pre\">(unknown)</span></code> 消息添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">text</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为文本 <code class=\"docutils literal\"><span class=\"pre\">(text)</span></code> 消息添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">subscribe</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为被关注 <code class=\"docutils literal\"><span class=\"pre\">(subscribe)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">scancode_waitmsg</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为扫描弹消息 <code class=\"docutils literal\"><span class=\"pre\">(scancode_waitmsg)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">scancode_push</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为扫描推送 <code class=\"docutils literal\"><span class=\"pre\">(scancode_push)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">parse_message</code><span class=\"sig-paren\">(</span><em>body</em>, <em>timestamp=None</em>, <em>nonce=None</em>, <em>msg_signature=None</em><span class=\"sig-paren\">)</span></p></li><li><p>解析获取到的 Raw XML ，如果需要的话进行解密，返回 WeRoBot Message。\r\n:param body: 微信服务器发来的请求中的 Body。\r\n:return: WeRoBot Message</p></li><li><p><code class=\"descname\">location_event</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为上报位置 <code class=\"docutils literal\"><span class=\"pre\">(location_event)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">location</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为位置 <code class=\"docutils literal\"><span class=\"pre\">(location)</span></code> 消息添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">link</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为链接 <code class=\"docutils literal\"><span class=\"pre\">(link)</span></code> 消息添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">key_click</code><span class=\"sig-paren\">(</span><em>key</em><span class=\"sig-paren\">)</span></p></li><li><p>为自定义菜单 <code class=\"docutils literal\"><span class=\"pre\">(click)</span></code> 事件添加 handler 的简便方法。</p><p><strong>@key_click(‘KEYNAME’)</strong> 用来为特定 key 的点击事件添加 handler 方法。</p></li><li><p><code class=\"descname\">image</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为图像 <code class=\"docutils literal\"><span class=\"pre\">(image)</span></code> 消息添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">handler</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为每一条消息或事件添加一个 handler 方法的装饰器。</p></li><li><p><code class=\"descname\">get_reply</code><span class=\"sig-paren\">(</span><em>message</em><span class=\"sig-paren\">)</span></p></li><li><p>根据 message 的内容获取 Reply 对象。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>message</strong> – 要处理的 message</td></tr><tr class=\"field-even field\"><th class=\"field-name\">返回:</th><td class=\"field-body\">获取的 Reply 对象</td></tr></tbody></table></li><li><p><code class=\"descname\">get_encrypted_reply</code><span class=\"sig-paren\">(</span><em>message</em><span class=\"sig-paren\">)</span></p></li><li><p>对一个指定的 WeRoBot Message ，获取 handlers 处理后得到的 Reply。\r\n如果可能，对该 Reply 进行加密。\r\n返回 Reply Render 后的文本。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>message</strong> – 一个 WeRoBot Message 实例。</td></tr><tr class=\"field-even field\"><th class=\"field-name\">返回:</th><td class=\"field-body\">reply （纯文本）</td></tr></tbody></table></li><li><p><code class=\"descname\">filter</code><span class=\"sig-paren\">(</span><em>*args</em><span class=\"sig-paren\">)</span></p></li><li><p>为文本 <code class=\"docutils literal\"><span class=\"pre\">(text)</span></code> 消息添加 handler 的简便方法。</p><p>使用 <code class=\"docutils literal\"><span class=\"pre\">@filter(&quot;xxx&quot;)</span></code>, <code class=\"docutils literal\"><span class=\"pre\">@filter(re.compile(&quot;xxx&quot;))</span></code>或 <code class=\"docutils literal\"><span class=\"pre\">@filter(&quot;xxx&quot;,</span> <span class=\"pre\">&quot;xxx2&quot;)</span></code> 的形式为特定内容添加 handler。</p></li><li><p><code class=\"descname\">error_page</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为 robot 指定 Signature 验证不通过时显示的错误页面。</p><p>Usage:</p><pre>@robot.error_pagedef&nbsp;make_error_page(url):\r\n&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&quot;&lt;h1&gt;喵喵喵&nbsp;%s&nbsp;不是给麻瓜访问的快走开&lt;/h1&gt;&quot;&nbsp;%&nbsp;url</pre></li><li><p><code class=\"descname\">click</code><span class=\"sig-paren\">(</span><em>f</em><span class=\"sig-paren\">)</span></p></li><li><p>为自定义菜单事件 <code class=\"docutils literal\"><span class=\"pre\">(click)</span></code> 事件添加一个 handler 方法的装饰器。</p></li><li><p><strong>timestamp</strong> – 时间戳</p></li><li><p><strong>nonce</strong> – 生成签名的随机字符串</p></li><li><p><strong>signature</strong> – 要检查的签名</p></li><li><p><code class=\"descname\">check_signature</code><span class=\"sig-paren\">(</span><em>timestamp</em>, <em>nonce</em>, <em>signature</em><span class=\"sig-paren\">)</span></p></li><li><p>根据时间戳和生成签名的字符串 (nonce) 检查签名。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr><tr class=\"field-even field\"><th class=\"field-name\">返回:</th><td class=\"field-body\"><p class=\"first last\">如果签名合法将返回 <code class=\"docutils literal\"><span class=\"pre\">True</span></code>，不合法将返回 <code class=\"docutils literal\"><span class=\"pre\">False</span></code></p></td></tr></tbody></table></li><li><p><strong>func</strong> – 要作为 handler 的方法。</p></li><li><p><strong>type</strong> – handler 的种类。</p></li><li><p><code class=\"descname\">add_handler</code><span class=\"sig-paren\">(</span><em>func</em>, <em>type=&#39;all&#39;</em><span class=\"sig-paren\">)</span></p></li><li><p>为 BaseRoBot 实例添加一个 handler。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr><tr class=\"field-even field\"><th class=\"field-name\">返回:</th><td class=\"field-body\"><p class=\"first last\">None</p></td></tr></tbody></table></li><li><p><strong>func</strong> – 如果 rules 通过，则处理该消息的 handler。</p></li><li><p><strong>rules</strong> – 一个 list，包含要匹配的字符串或者正则表达式。</p></li><li><p><code class=\"descname\">add_filter</code><span class=\"sig-paren\">(</span><em>func</em>, <em>rules</em><span class=\"sig-paren\">)</span></p></li><li><p>为 BaseRoBot 添加一个 <code class=\"docutils literal\"><span class=\"pre\">filter</span> <span class=\"pre\">handler</span></code>。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr><tr class=\"field-even field\"><th class=\"field-name\">返回:</th><td class=\"field-body\"><p class=\"first last\">None</p></td></tr></tbody></table></li><li><p><strong>token</strong> – 微信公众号设置的 token <strong>(deprecated)</strong></p></li><li><p><strong>enable_session</strong> – 是否开启 session <strong>(deprecated)</strong></p></li><li><p><strong>session_storage</strong> – 用来储存 session 的对象，如果为 <code class=\"docutils literal\"><span class=\"pre\">None</span></code>， &nbsp; &nbsp;将使用 werobot.session.sqlitestorage.SQLiteStorage <strong>(deprecated)</strong></p></li><li><p><strong>app_id</strong> – 微信公众号设置的 app id <strong>(deprecated)</strong></p></li><li><p><strong>app_secret</strong> – 微信公众号设置的 app secret <strong>(deprecated)</strong></p></li><li><p><strong>encoding_aes_key</strong> – 用来加解密消息的 aes key <strong>(deprecated)</strong></p></li><li><p><strong>logger</strong> – 用来输出 log 的 logger，如果是 <code class=\"docutils literal\"><span class=\"pre\">None</span></code>，将使用 werobot.logger</p></li><li><p><strong>config</strong> – 用来设置的 <a class=\"reference internal\" href=\"https://werobot.readthedocs.io/zh_CN/latest/api.html#werobot.config.Config\" title=\"werobot.config.Config\"><code class=\"xref py py-class docutils literal\"><span class=\"pre\">werobot.config.Config</span></code></a> 对象</p></li></ul></ul><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.robot.</code><code class=\"descname\">WeRoBot</code><span class=\"sig-paren\">(</span><em>token=None</em>, <em>logger=None</em>, <em>enable_session=None</em>, <em>session_storage=None</em>, <em>app_id=None</em>, <em>app_secret=None</em>, <em>encoding_aes_key=None</em>, <em>config=None</em>, <em>**kwargs</em><span class=\"sig-paren\">)</span></p></li><li><p>WeRoBot 是一个继承自 BaseRoBot 的对象，在 BaseRoBot 的基础上使用了 bottle 框架，\r\n提供接收微信服务器发来的请求的功能。</p></li><ul class=\"first last simple list-paddingleft-2\" style=\"list-style-type: square;\"><li><p><strong>server</strong> – 传递给 Bottle 框架 run 方法的参数，详情见 &nbsp; &nbsp; &nbsp; &nbsp;<a class=\"reference external\" href=\"https://bottlepy.org/docs/dev/deployment.html#switching-the-server-backend\">bottle 文档</a></p></li><li><p><strong>host</strong> – 运行时绑定的主机地址</p></li><li><p><strong>port</strong> – 运行时绑定的主机端口</p></li><li><p><strong>enable_pretty_logging</strong> – 是否开启 log 的输出格式优化</p></li><li><p><code class=\"descname\">run</code><span class=\"sig-paren\">(</span><em>server=None</em>, <em>host=None</em>, <em>port=None</em>, <em>enable_pretty_logging=True</em><span class=\"sig-paren\">)</span></p></li><li><p>运行 WeRoBot。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr></tbody></table></li></ul></ul><p><span id=\"id2\"></span></p><h2>配置对象</h2><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.config.</code><code class=\"descname\">Config</code></p></li><li><p><br/></p></li><ul class=\"method list-paddingleft-2\" style=\"list-style-type: square;\"><li><p><code class=\"descname\">from_pyfile</code><span class=\"sig-paren\">(</span><em>filename</em><span class=\"sig-paren\">)</span></p></li><li><p>在一个 Python 文件中读取配置。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>filename</strong> – 配置文件的文件名</td></tr><tr class=\"field-even field\"><th class=\"field-name\">返回:</th><td class=\"field-body\">如果读取成功，返回 <code class=\"docutils literal\"><span class=\"pre\">True</span></code>，如果失败，会抛出错误异常</td></tr></tbody></table></li><li><p><code class=\"descname\">from_object</code><span class=\"sig-paren\">(</span><em>obj</em><span class=\"sig-paren\">)</span></p></li><li><p>在给定的 Python 对象中读取配置。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>obj</strong> – 一个 Python 对象</td></tr></tbody></table></li></ul></ul><p><span id=\"session\"></span></p><h2>Session 对象</h2><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.session.sqlitestorage.</code><code class=\"descname\">SQLiteStorage</code><span class=\"sig-paren\">(</span><em>filename=&#39;werobot_session.sqlite3&#39;</em><span class=\"sig-paren\">)</span></p></li><li><p>SQLiteStorge 会把 Session 数据储存在一个 SQLite 数据库文件中</p><pre>import&nbsp;werobotfrom&nbsp;werobot.session.sqlitestorage&nbsp;import&nbsp;SQLiteStoragesession_storage&nbsp;=&nbsp;SQLiteStoragerobot&nbsp;=&nbsp;werobot.WeRoBot(token=&quot;token&quot;,&nbsp;enable_session=True,\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_storage=session_storage)</pre><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>filename</strong> – SQLite数据库的文件名, 默认是 <code class=\"docutils literal\"><span class=\"pre\">werobot_session.sqlite3</span></code></td></tr></tbody></table></li></ul><p><span class=\"target\" id=\"module-werobot.session.filestorage\"></span></p><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.session.filestorage.</code><code class=\"descname\">FileStorage</code><span class=\"sig-paren\">(</span><em>filename=&#39;werobot_session&#39;</em><span class=\"sig-paren\">)</span></p></li><li><p>FileStorage 会把你的 Session 数据以 dbm 形式储存在文件中。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>filename</strong> – 文件名， 默认为 <code class=\"docutils literal\"><span class=\"pre\">werobot_session</span></code></td></tr></tbody></table></li></ul><p><span class=\"target\" id=\"module-werobot.session.mongodbstorage\"></span></p><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.session.mongodbstorage.</code><code class=\"descname\">MongoDBStorage</code><span class=\"sig-paren\">(</span><em>collection</em><span class=\"sig-paren\">)</span></p></li><li><p>MongoDBStorage 会把你的 Session 数据储存在一个 MongoDB Collection 中</p><pre>import&nbsp;pymongoimport&nbsp;werobotfrom&nbsp;werobot.session.mongodbstorage&nbsp;import&nbsp;MongoDBStoragecollection&nbsp;=&nbsp;pymongo.MongoClient()[&quot;wechat&quot;][&quot;session&quot;]session_storage&nbsp;=&nbsp;MongoDBStorage(collection)robot&nbsp;=&nbsp;werobot.WeRoBot(token=&quot;token&quot;,&nbsp;enable_session=True,\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_storage=session_storage)</pre><p>你需要安装 <code class=\"docutils literal\"><span class=\"pre\">pymongo</span></code> 才能使用 MongoDBStorage 。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>collection</strong> – 一个 MongoDB Collection。</td></tr></tbody></table></li></ul><p><span class=\"target\" id=\"module-werobot.session.redisstorage\"></span></p><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.session.redisstorage.</code><code class=\"descname\">RedisStorage</code><span class=\"sig-paren\">(</span><em>redis</em>, <em>prefix=&#39;ws_&#39;</em><span class=\"sig-paren\">)</span></p></li><li><p>RedisStorage 会把你的 Session 数据储存在 Redis 中</p><pre>import&nbsp;redisimport&nbsp;werobotfrom&nbsp;werobot.session.redisstorage&nbsp;import&nbsp;RedisStoragedb&nbsp;=&nbsp;redis.Redis()session_storage&nbsp;=&nbsp;RedisStorage(db,&nbsp;prefix=&quot;my_prefix_&quot;)robot&nbsp;=&nbsp;werobot.WeRoBot(token=&quot;token&quot;,&nbsp;enable_session=True,\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_storage=session_storage)</pre><p>你需要安装 <code class=\"docutils literal\"><span class=\"pre\">redis</span></code> 才能使用 RedisStorage 。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><br/></td></tr></tbody></table></li><ul class=\"first last simple list-paddingleft-2\" style=\"list-style-type: square;\"><li><p><strong>redis</strong> – 一个 Redis Client。</p></li><li><p><strong>prefix</strong> – Reids 中 Session 数据 key 的 prefix 。默认为 <code class=\"docutils literal\"><span class=\"pre\">ws_</span></code></p></li></ul></ul><p><span class=\"target\" id=\"module-werobot.session.saekvstorage\"></span></p><ul class=\"class list-paddingleft-2\"><li><p><em class=\"property\">class </em><code class=\"descclassname\">werobot.session.saekvstorage.</code><code class=\"descname\">SaeKVDBStorage</code><span class=\"sig-paren\">(</span><em>prefix=&#39;ws_&#39;</em><span class=\"sig-paren\">)</span></p></li><li><p>SaeKVDBStorage 使用SAE 的 KVDB 来保存你的session</p><pre>import&nbsp;werobotfrom&nbsp;werobot.session.saekvstorage&nbsp;import&nbsp;SaeKVDBStoragesession_storage&nbsp;=&nbsp;SaeKVDBStorage()robot&nbsp;=&nbsp;werobot.WeRoBot(token=&quot;token&quot;,&nbsp;enable_session=True,\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_storage=session_storage)</pre><p>需要先在后台开启 KVDB 支持</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"><strong>prefix</strong> – KVDB 中 Session 数据 key 的 prefix 。默认为 <code class=\"docutils literal\"><span class=\"pre\">ws_</span></code></td></tr></tbody></table></li></ul><p><span id=\"log\"></span></p><h2>log</h2><ul class=\"function list-paddingleft-2\"><li><p><code class=\"descclassname\">werobot.logger.</code><code class=\"descname\">enable_pretty_logging</code><span class=\"sig-paren\">(</span><em>logger</em>, <em>level=&#39;info&#39;</em><span class=\"sig-paren\">)</span></p></li><li><p>按照配置开启 log 的格式化优化。</p><table class=\"docutils field-list\" frame=\"void\" rules=\"none\"><colgroup><col class=\"field-name\"/><col class=\"field-body\"/></colgroup><tbody valign=\"top\"><tr class=\"field-odd field firstRow\"><th class=\"field-name\">参数:</th><td class=\"field-body\"></td></tr></tbody></table></li><ul class=\"first last simple list-paddingleft-2\" style=\"list-style-type: square;\"><li><p><strong>logger</strong> – 配置的 logger 对象</p></li><li><p><strong>level</strong> – 要为 logger 设置的等级</p></li></ul></ul><p><br/></p><p>https://werobot.readthedocs.io/zh_CN/latest/api.html</p>','2017-05-27 07:32:06.801015','2017-05-27 07:32:06.801015',1,0,0,0,1,1,'uploads/blog/images/default.jpg',1);
+/*!40000 ALTER TABLE `focus_article` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `focus_article_user`
+--
+
+DROP TABLE IF EXISTS `focus_article_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `focus_article_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) NOT NULL,
+  `newuser_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `focus_article_user_article_id_642bd271_uniq` (`article_id`,`newuser_id`),
+  KEY `focus_article_user_newuser_id_c553cc27_fk_focus_newuser_id` (`newuser_id`),
+  CONSTRAINT `focus_article_user_article_id_b973228c_fk_focus_article_id` FOREIGN KEY (`article_id`) REFERENCES `focus_article` (`id`),
+  CONSTRAINT `focus_article_user_newuser_id_c553cc27_fk_focus_newuser_id` FOREIGN KEY (`newuser_id`) REFERENCES `focus_newuser` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `jhun_fruitarticle`
+-- Dumping data for table `focus_article_user`
 --
 
-LOCK TABLES `jhun_fruitarticle` WRITE;
-/*!40000 ALTER TABLE `jhun_fruitarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jhun_fruitarticle` ENABLE KEYS */;
+LOCK TABLES `focus_article_user` WRITE;
+/*!40000 ALTER TABLE `focus_article_user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `focus_article_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `jhun_homeimage`
+-- Table structure for table `focus_author`
 --
 
-DROP TABLE IF EXISTS `jhun_homeimage`;
+DROP TABLE IF EXISTS `focus_author`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jhun_homeimage` (
+CREATE TABLE `focus_author` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `homepic` varchar(100) NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `profile` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `register_date` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `jhun_homeimage`
+-- Dumping data for table `focus_author`
 --
 
-LOCK TABLES `jhun_homeimage` WRITE;
-/*!40000 ALTER TABLE `jhun_homeimage` DISABLE KEYS */;
-INSERT INTO `jhun_homeimage` VALUES (1,'one_pic','uploads/jhun/images/sh.jpg');
-/*!40000 ALTER TABLE `jhun_homeimage` ENABLE KEYS */;
+LOCK TABLES `focus_author` WRITE;
+/*!40000 ALTER TABLE `focus_author` DISABLE KEYS */;
+INSERT INTO `focus_author` VALUES (1,'actanble','1','112233..','2017-05-27 01:48:45.062663');
+/*!40000 ALTER TABLE `focus_author` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `jhun_infoarticle`
+-- Table structure for table `focus_column`
 --
 
-DROP TABLE IF EXISTS `jhun_infoarticle`;
+DROP TABLE IF EXISTS `focus_column`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jhun_infoarticle` (
+CREATE TABLE `focus_column` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `intro` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `focus_column`
+--
+
+LOCK TABLES `focus_column` WRITE;
+/*!40000 ALTER TABLE `focus_column` DISABLE KEYS */;
+INSERT INTO `focus_column` VALUES (1,'测试1','测试1');
+/*!40000 ALTER TABLE `focus_column` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `focus_comment`
+--
+
+DROP TABLE IF EXISTS `focus_comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `focus_comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
   `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+  `poll_num` int(11) NOT NULL,
+  `article_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `focus_comment_article_id_9f521bfe_fk_focus_article_id` (`article_id`),
+  KEY `focus_comment_user_id_85082fd0_fk_focus_newuser_id` (`user_id`),
+  CONSTRAINT `focus_comment_article_id_9f521bfe_fk_focus_article_id` FOREIGN KEY (`article_id`) REFERENCES `focus_article` (`id`),
+  CONSTRAINT `focus_comment_user_id_85082fd0_fk_focus_newuser_id` FOREIGN KEY (`user_id`) REFERENCES `focus_newuser` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `jhun_infoarticle`
+-- Dumping data for table `focus_comment`
 --
 
-LOCK TABLES `jhun_infoarticle` WRITE;
-/*!40000 ALTER TABLE `jhun_infoarticle` DISABLE KEYS */;
-INSERT INTO `jhun_infoarticle` VALUES (31,0,'uploads/jhun/images/default.jpg','行业资讯 1 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:14.699653','暨大信息科学院','暨大信息科学院','info'),(32,0,'uploads/jhun/images/default.jpg','行业资讯 2 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:14.928666','暨大信息科学院','暨大信息科学院','info'),(33,0,'uploads/jhun/images/default.jpg','行业资讯 3 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.010671','暨大信息科学院','暨大信息科学院','info'),(34,0,'uploads/jhun/images/default.jpg','行业资讯 4 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.109676','暨大信息科学院','暨大信息科学院','info'),(35,0,'uploads/jhun/images/default.jpg','行业资讯 5 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.169680','暨大信息科学院','暨大信息科学院','info'),(36,0,'uploads/jhun/images/default.jpg','行业资讯 6 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.203682','暨大信息科学院','暨大信息科学院','info'),(37,0,'uploads/jhun/images/default.jpg','行业资讯 7 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.250684','暨大信息科学院','暨大信息科学院','info'),(38,0,'uploads/jhun/images/default.jpg','行业资讯 8 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.277686','暨大信息科学院','暨大信息科学院','info'),(39,0,'uploads/jhun/images/default.jpg','行业资讯 9 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.327689','暨大信息科学院','暨大信息科学院','info'),(40,0,'uploads/jhun/images/default.jpg','行业资讯 10 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.360691','暨大信息科学院','暨大信息科学院','info'),(41,0,'uploads/jhun/images/default.jpg','行业资讯 11 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.394693','暨大信息科学院','暨大信息科学院','info'),(42,0,'uploads/jhun/images/default.jpg','行业资讯 12 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.427695','暨大信息科学院','暨大信息科学院','info'),(43,0,'uploads/jhun/images/default.jpg','行业资讯 13 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.460696','暨大信息科学院','暨大信息科学院','info'),(44,0,'uploads/jhun/images/default.jpg','行业资讯 14 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.519700','暨大信息科学院','暨大信息科学院','info'),(45,0,'uploads/jhun/images/default.jpg','行业资讯 15 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.577703','暨大信息科学院','暨大信息科学院','info'),(46,0,'uploads/jhun/images/default.jpg','行业资讯 16 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.610705','暨大信息科学院','暨大信息科学院','info'),(47,0,'uploads/jhun/images/default.jpg','行业资讯 17 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.644707','暨大信息科学院','暨大信息科学院','info'),(48,0,'uploads/jhun/images/default.jpg','行业资讯 18 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.677709','暨大信息科学院','暨大信息科学院','info'),(49,0,'uploads/jhun/images/default.jpg','行业资讯 19 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.710711','暨大信息科学院','暨大信息科学院','info'),(50,0,'uploads/jhun/images/default.jpg','行业资讯 20 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.769714','暨大信息科学院','暨大信息科学院','info'),(51,0,'uploads/jhun/images/default.jpg','行业资讯 21 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.802716','暨大信息科学院','暨大信息科学院','info'),(52,0,'uploads/jhun/images/default.jpg','行业资讯 22 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.836718','暨大信息科学院','暨大信息科学院','info'),(53,0,'uploads/jhun/images/default.jpg','行业资讯 23 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.869720','暨大信息科学院','暨大信息科学院','info'),(54,0,'uploads/jhun/images/default.jpg','行业资讯 24 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.903722','暨大信息科学院','暨大信息科学院','info'),(55,0,'uploads/jhun/images/default.jpg','行业资讯 25 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:15.976726','暨大信息科学院','暨大信息科学院','info'),(56,0,'uploads/jhun/images/default.jpg','行业资讯 26 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:16.020728','暨大信息科学院','暨大信息科学院','info'),(57,0,'uploads/jhun/images/default.jpg','行业资讯 27 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:16.061731','暨大信息科学院','暨大信息科学院','info'),(58,0,'uploads/jhun/images/default.jpg','行业资讯 28 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:16.094733','暨大信息科学院','暨大信息科学院','info'),(59,0,'uploads/jhun/images/default.jpg','行业资讯 29 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:16.127735','暨大信息科学院','暨大信息科学院','info'),(60,0,'uploads/jhun/images/default.jpg','行业资讯 30 个批处理','行业资讯的内容概要;不换行','文本中心内容，略;',1,'2017-05-23 00:35:16.185738','暨大信息科学院','暨大信息科学院','info'),(61,0,'uploads/jhun/images/f5.jpg','举例1','今日举例1','<p>.。。。<br/></p>',1,'2017-05-23 00:50:04.000000','暨大信息科学院','暨大信息科学院','info');
-/*!40000 ALTER TABLE `jhun_infoarticle` ENABLE KEYS */;
+LOCK TABLES `focus_comment` WRITE;
+/*!40000 ALTER TABLE `focus_comment` DISABLE KEYS */;
+INSERT INTO `focus_comment` VALUES (1,'1111111111111111111111111111111111','2017-05-27 01:49:00.194528',1,1,1);
+/*!40000 ALTER TABLE `focus_comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `jhun_introarticle`
+-- Table structure for table `focus_newuser`
 --
 
-DROP TABLE IF EXISTS `jhun_introarticle`;
+DROP TABLE IF EXISTS `focus_newuser`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jhun_introarticle` (
+CREATE TABLE `focus_newuser` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(128) NOT NULL,
+  `last_login` datetime(6) DEFAULT NULL,
+  `is_superuser` tinyint(1) NOT NULL,
+  `username` varchar(150) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `is_staff` tinyint(1) NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `date_joined` datetime(6) NOT NULL,
+  `profile` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `focus_newuser`
+--
+
+LOCK TABLES `focus_newuser` WRITE;
+/*!40000 ALTER TABLE `focus_newuser` DISABLE KEYS */;
+INSERT INTO `focus_newuser` VALUES (1,'pbkdf2_sha256$30000$B1QBme3agei0$MLmTvUi15rK5mv+NuCgO7ScNn7xF6hF3/u8rrRVKGIk=','2017-05-27 01:47:26.367161',1,'actanble','','','a@1.com',1,1,'2017-05-27 01:47:20.619833',''),(2,'112233..','2017-05-27 07:39:00.000000',1,'user1','1','1','1@1.com',1,1,'2017-05-27 07:39:00.000000','....');
+/*!40000 ALTER TABLE `focus_newuser` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `focus_newuser_groups`
+--
+
+DROP TABLE IF EXISTS `focus_newuser_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `focus_newuser_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `newuser_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `focus_newuser_groups_newuser_id_4b595a5a_uniq` (`newuser_id`,`group_id`),
+  KEY `focus_newuser_groups_group_id_583844b1_fk_auth_group_id` (`group_id`),
+  CONSTRAINT `focus_newuser_groups_group_id_583844b1_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
+  CONSTRAINT `focus_newuser_groups_newuser_id_19434e35_fk_focus_newuser_id` FOREIGN KEY (`newuser_id`) REFERENCES `focus_newuser` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `focus_newuser_groups`
+--
+
+LOCK TABLES `focus_newuser_groups` WRITE;
+/*!40000 ALTER TABLE `focus_newuser_groups` DISABLE KEYS */;
+INSERT INTO `focus_newuser_groups` VALUES (1,2,1);
+/*!40000 ALTER TABLE `focus_newuser_groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `focus_newuser_user_permissions`
+--
+
+DROP TABLE IF EXISTS `focus_newuser_user_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `focus_newuser_user_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `newuser_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `focus_newuser_user_permissions_newuser_id_41814ea8_uniq` (`newuser_id`,`permission_id`),
+  KEY `focus_newuser_user__permission_id_b2b03d7e_fk_auth_permission_id` (`permission_id`),
+  CONSTRAINT `focus_newuser_user__permission_id_b2b03d7e_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
+  CONSTRAINT `focus_newuser_user_permi_newuser_id_2369309a_fk_focus_newuser_id` FOREIGN KEY (`newuser_id`) REFERENCES `focus_newuser` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `focus_newuser_user_permissions`
+--
+
+LOCK TABLES `focus_newuser_user_permissions` WRITE;
+/*!40000 ALTER TABLE `focus_newuser_user_permissions` DISABLE KEYS */;
+INSERT INTO `focus_newuser_user_permissions` VALUES (1,2,40);
+/*!40000 ALTER TABLE `focus_newuser_user_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `focus_poll`
+--
+
+DROP TABLE IF EXISTS `focus_poll`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `focus_poll` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) DEFAULT NULL,
+  `comment_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `focus_poll_article_id_fc37803c_fk_focus_article_id` (`article_id`),
+  KEY `focus_poll_comment_id_0e933625_fk_focus_comment_id` (`comment_id`),
+  KEY `focus_poll_user_id_6ba9f9df_fk_focus_newuser_id` (`user_id`),
+  CONSTRAINT `focus_poll_article_id_fc37803c_fk_focus_article_id` FOREIGN KEY (`article_id`) REFERENCES `focus_article` (`id`),
+  CONSTRAINT `focus_poll_comment_id_0e933625_fk_focus_comment_id` FOREIGN KEY (`comment_id`) REFERENCES `focus_comment` (`id`),
+  CONSTRAINT `focus_poll_user_id_6ba9f9df_fk_focus_newuser_id` FOREIGN KEY (`user_id`) REFERENCES `focus_newuser` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `jhun_introarticle`
+-- Dumping data for table `focus_poll`
 --
 
-LOCK TABLES `jhun_introarticle` WRITE;
-/*!40000 ALTER TABLE `jhun_introarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jhun_introarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jhun_newsarticle`
---
-
-DROP TABLE IF EXISTS `jhun_newsarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jhun_newsarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jhun_newsarticle`
---
-
-LOCK TABLES `jhun_newsarticle` WRITE;
-/*!40000 ALTER TABLE `jhun_newsarticle` DISABLE KEYS */;
-INSERT INTO `jhun_newsarticle` VALUES (91,0,'uploads/jhun/images/default.jpg','新闻中心 1 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:14:59.967269','暨大信息科学院','暨大信息科学院','news'),(92,0,'uploads/jhun/images/default.jpg','新闻中心 2 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.048274','暨大信息科学院','暨大信息科学院','news'),(93,0,'uploads/jhun/images/default.jpg','新闻中心 3 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.073276','暨大信息科学院','暨大信息科学院','news'),(94,0,'uploads/jhun/images/default.jpg','新闻中心 4 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.131279','暨大信息科学院','暨大信息科学院','news'),(95,0,'uploads/jhun/images/default.jpg','新闻中心 5 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.156280','暨大信息科学院','暨大信息科学院','news'),(96,0,'uploads/jhun/images/default.jpg','新闻中心 6 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.181282','暨大信息科学院','暨大信息科学院','news'),(97,0,'uploads/jhun/images/default.jpg','新闻中心 7 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.207283','暨大信息科学院','暨大信息科学院','news'),(98,0,'uploads/jhun/images/default.jpg','新闻中心 8 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.231285','暨大信息科学院','暨大信息科学院','news'),(99,0,'uploads/jhun/images/default.jpg','新闻中心 9 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.257286','暨大信息科学院','暨大信息科学院','news'),(100,0,'uploads/jhun/images/default.jpg','新闻中心 10 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.306289','暨大信息科学院','暨大信息科学院','news'),(101,0,'uploads/jhun/images/default.jpg','新闻中心 11 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.332290','暨大信息科学院','暨大信息科学院','news'),(102,0,'uploads/jhun/images/default.jpg','新闻中心 12 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.396294','暨大信息科学院','暨大信息科学院','news'),(103,0,'uploads/jhun/images/default.jpg','新闻中心 13 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.440297','暨大信息科学院','暨大信息科学院','news'),(104,0,'uploads/jhun/images/default.jpg','新闻中心 14 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.465298','暨大信息科学院','暨大信息科学院','news'),(105,0,'uploads/jhun/images/default.jpg','新闻中心 15 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.490299','暨大信息科学院','暨大信息科学院','news'),(106,0,'uploads/jhun/images/default.jpg','新闻中心 16 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.523301','暨大信息科学院','暨大信息科学院','news'),(107,0,'uploads/jhun/images/default.jpg','新闻中心 17 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.548303','暨大信息科学院','暨大信息科学院','news'),(108,0,'uploads/jhun/images/default.jpg','新闻中心 18 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.607306','暨大信息科学院','暨大信息科学院','news'),(109,0,'uploads/jhun/images/default.jpg','新闻中心 19 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.631307','暨大信息科学院','暨大信息科学院','news'),(110,0,'uploads/jhun/images/default.jpg','新闻中心 20 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.657309','暨大信息科学院','暨大信息科学院','news'),(111,0,'uploads/jhun/images/default.jpg','新闻中心 21 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.690311','暨大信息科学院','暨大信息科学院','news'),(112,0,'uploads/jhun/images/default.jpg','新闻中心 22 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.715312','暨大信息科学院','暨大信息科学院','news'),(113,0,'uploads/jhun/images/default.jpg','新闻中心 23 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.740314','暨大信息科学院','暨大信息科学院','news'),(114,0,'uploads/jhun/images/default.jpg','新闻中心 24 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.791317','暨大信息科学院','暨大信息科学院','news'),(115,0,'uploads/jhun/images/default.jpg','新闻中心 25 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.823318','暨大信息科学院','暨大信息科学院','news'),(116,0,'uploads/jhun/images/default.jpg','新闻中心 26 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.848320','暨大信息科学院','暨大信息科学院','news'),(117,0,'uploads/jhun/images/default.jpg','新闻中心 27 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.873321','暨大信息科学院','暨大信息科学院','news'),(118,0,'uploads/jhun/images/default.jpg','新闻中心 28 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.898323','暨大信息科学院','暨大信息科学院','news'),(119,0,'uploads/jhun/images/default.jpg','新闻中心 29 个批处理','新闻中心的内容概要;不换行','文本中心内容，略;',1,'2017-05-22 09:15:00.924324','暨大信息科学院','暨大信息科学院','news'),(120,0,'uploads/jhun/images/default.jpg','新闻中心 30 个批处理','新闻中心的内容概要;不换行','<p>&nbsp; &nbsp; 文本中心内容，略;</p>',1,'2017-05-22 09:15:00.000000','暨大信息科学院','暨大信息科学院','news');
-/*!40000 ALTER TABLE `jhun_newsarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jhun_productarticle`
---
-
-DROP TABLE IF EXISTS `jhun_productarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jhun_productarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pic` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jhun_productarticle`
---
-
-LOCK TABLES `jhun_productarticle` WRITE;
-/*!40000 ALTER TABLE `jhun_productarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jhun_productarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jnu_fruitarticle`
---
-
-DROP TABLE IF EXISTS `jnu_fruitarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jnu_fruitarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jnu_fruitarticle`
---
-
-LOCK TABLES `jnu_fruitarticle` WRITE;
-/*!40000 ALTER TABLE `jnu_fruitarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jnu_fruitarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jnu_homeimage`
---
-
-DROP TABLE IF EXISTS `jnu_homeimage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jnu_homeimage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `homepic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jnu_homeimage`
---
-
-LOCK TABLES `jnu_homeimage` WRITE;
-/*!40000 ALTER TABLE `jnu_homeimage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jnu_homeimage` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jnu_infoarticle`
---
-
-DROP TABLE IF EXISTS `jnu_infoarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jnu_infoarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jnu_infoarticle`
---
-
-LOCK TABLES `jnu_infoarticle` WRITE;
-/*!40000 ALTER TABLE `jnu_infoarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jnu_infoarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jnu_introarticle`
---
-
-DROP TABLE IF EXISTS `jnu_introarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jnu_introarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jnu_introarticle`
---
-
-LOCK TABLES `jnu_introarticle` WRITE;
-/*!40000 ALTER TABLE `jnu_introarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jnu_introarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jnu_newsarticle`
---
-
-DROP TABLE IF EXISTS `jnu_newsarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jnu_newsarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jnu_newsarticle`
---
-
-LOCK TABLES `jnu_newsarticle` WRITE;
-/*!40000 ALTER TABLE `jnu_newsarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jnu_newsarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `jnu_productarticle`
---
-
-DROP TABLE IF EXISTS `jnu_productarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jnu_productarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pic` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `jnu_productarticle`
---
-
-LOCK TABLES `jnu_productarticle` WRITE;
-/*!40000 ALTER TABLE `jnu_productarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jnu_productarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_focusarticle`
---
-
-DROP TABLE IF EXISTS `news_focusarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_focusarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_focusarticle`
---
-
-LOCK TABLES `news_focusarticle` WRITE;
-/*!40000 ALTER TABLE `news_focusarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_focusarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_lawarticle`
---
-
-DROP TABLE IF EXISTS `news_lawarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_lawarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_lawarticle`
---
-
-LOCK TABLES `news_lawarticle` WRITE;
-/*!40000 ALTER TABLE `news_lawarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_lawarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_policyarticle`
---
-
-DROP TABLE IF EXISTS `news_policyarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_policyarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_policyarticle`
---
-
-LOCK TABLES `news_policyarticle` WRITE;
-/*!40000 ALTER TABLE `news_policyarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_policyarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_policyhomeimage`
---
-
-DROP TABLE IF EXISTS `news_policyhomeimage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_policyhomeimage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `homepic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_policyhomeimage`
---
-
-LOCK TABLES `news_policyhomeimage` WRITE;
-/*!40000 ALTER TABLE `news_policyhomeimage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_policyhomeimage` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_popularscience`
---
-
-DROP TABLE IF EXISTS `news_popularscience`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_popularscience` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_popularscience`
---
-
-LOCK TABLES `news_popularscience` WRITE;
-/*!40000 ALTER TABLE `news_popularscience` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_popularscience` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_slideimage`
---
-
-DROP TABLE IF EXISTS `news_slideimage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_slideimage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `slidepic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_slideimage`
---
-
-LOCK TABLES `news_slideimage` WRITE;
-/*!40000 ALTER TABLE `news_slideimage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_slideimage` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_talentsarticle`
---
-
-DROP TABLE IF EXISTS `news_talentsarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_talentsarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_talentsarticle`
---
-
-LOCK TABLES `news_talentsarticle` WRITE;
-/*!40000 ALTER TABLE `news_talentsarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_talentsarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_techarticle`
---
-
-DROP TABLE IF EXISTS `news_techarticle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_techarticle` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `toutiao` tinyint(1) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `abstract` longtext NOT NULL,
-  `content` longtext NOT NULL,
-  `published` tinyint(1) NOT NULL,
-  `pub_date` datetime(6) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `sourcefrom` varchar(255) NOT NULL,
-  `slug_url` varchar(255) NOT NULL,
-  `pic` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_techarticle`
---
-
-LOCK TABLES `news_techarticle` WRITE;
-/*!40000 ALTER TABLE `news_techarticle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_techarticle` ENABLE KEYS */;
+LOCK TABLES `focus_poll` WRITE;
+/*!40000 ALTER TABLE `focus_poll` DISABLE KEYS */;
+/*!40000 ALTER TABLE `focus_poll` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -881,7 +496,7 @@ CREATE TABLE `twfabu_item` (
   `content` longtext NOT NULL,
   `dt` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -890,7 +505,7 @@ CREATE TABLE `twfabu_item` (
 
 LOCK TABLES `twfabu_item` WRITE;
 /*!40000 ALTER TABLE `twfabu_item` DISABLE KEYS */;
-INSERT INTO `twfabu_item` VALUES (1,'作者测试1','<p>万能示例; ---<br/>初始值。。。<br/></p>','2017-05-22 07:42:26.000000'),(2,'作者2','<p>插入图片1<br/><img src=\"http://maps.googleapis.com/maps/api/staticmap?center=30.601749009392254,114.29107699999997&zoom=16&size=520x340&maptype=roadmap&markers=30.601749,114.29107699999997&sensor=false\" width=\"520\" height=\"340\"/></p>','2017-05-22 07:44:56.000000'),(3,'测试3','<p><img src=\"http://api.map.baidu.com/staticimage?center=116.404,39.915&zoom=10&width=530&height=340&markers=116.404,39.915\" width=\"530\" height=\"340\"/></p>','2017-05-22 07:47:06.000000'),(4,'None','<p>1111<br/></p>','2017-05-22 07:47:56.000000'),(5,'None-在测试','<p>aaaaa<br/></p>','2017-05-25 03:30:08.000000'),(6,'fdsafdsf','<p>dsfdsaf<br/></p>','2017-05-25 03:42:07.000000'),(7,'测试400','<p><img src=\"http://img.baidu.com/hi/jx2/j_0004.gif\"/></p>','2017-05-25 04:43:42.000000');
+INSERT INTO `twfabu_item` VALUES (1,'测试1','<p>111111111111111111<br/></p>','2017-05-27 01:51:00.000000'),(2,'作者1','<p>测试图文发布</p><p><br/></p><p><strong>粗体</strong></p><p><strong><br/></strong></p><p><img src=\"/media/uploads/images/p4_20170527155403.jpg\" title=\"\" alt=\"p4.jpg\"/></p>','2017-05-27 07:54:00.000000'),(3,'测试2','<p>图文发布<br/></p>','2017-05-27 07:54:00.000000');
 /*!40000 ALTER TABLE `twfabu_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -906,7 +521,7 @@ CREATE TABLE `twfabu_lastpostid` (
   `postdt` datetime(6) NOT NULL,
   `postid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -915,8 +530,66 @@ CREATE TABLE `twfabu_lastpostid` (
 
 LOCK TABLES `twfabu_lastpostid` WRITE;
 /*!40000 ALTER TABLE `twfabu_lastpostid` DISABLE KEYS */;
-INSERT INTO `twfabu_lastpostid` VALUES (1,'2017-05-22 07:44:03.593183',1),(2,'2017-05-22 07:45:18.561471',2),(3,'2017-05-22 07:47:46.418928',3),(4,'2017-05-22 07:47:59.075652',4),(5,'2017-05-25 03:30:10.405852',5),(6,'2017-05-25 03:42:10.395033',6),(7,'2017-05-25 04:40:46.876493',6),(8,'2017-05-25 04:43:15.053968',6),(9,'2017-05-25 04:43:45.615716',7),(10,'2017-05-25 07:46:21.283345',7);
+INSERT INTO `twfabu_lastpostid` VALUES (1,'2017-05-27 01:52:02.047930',1),(2,'2017-05-27 07:54:24.552530',2),(3,'2017-05-27 07:54:55.194283',3);
 /*!40000 ALTER TABLE `twfabu_lastpostid` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `weixin_imagestory`
+--
+
+DROP TABLE IF EXISTS `weixin_imagestory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `weixin_imagestory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `homepic` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `weixin_imagestory`
+--
+
+LOCK TABLES `weixin_imagestory` WRITE;
+/*!40000 ALTER TABLE `weixin_imagestory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weixin_imagestory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `weixin_weixinarticle`
+--
+
+DROP TABLE IF EXISTS `weixin_weixinarticle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `weixin_weixinarticle` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `set_top` tinyint(1) NOT NULL,
+  `pic` varchar(100) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `abstract` longtext NOT NULL,
+  `content` longtext NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  `pub_date` datetime(6) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `sourcefrom` varchar(255) NOT NULL,
+  `slug_url` varchar(255) NOT NULL,
+  `Tag` varchar(155) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `weixin_weixinarticle`
+--
+
+LOCK TABLES `weixin_weixinarticle` WRITE;
+/*!40000 ALTER TABLE `weixin_weixinarticle` DISABLE KEYS */;
+INSERT INTO `weixin_weixinarticle` VALUES (1,0,'uploads/jnu/images/default.jpg','111111','1111','11111111111',1,'2017-05-27 02:32:00.000000','暨大信息科学院','暨大信息科学院','news','11');
+/*!40000 ALTER TABLE `weixin_weixinarticle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -928,4 +601,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-25 16:04:52
+-- Dump completed on 2017-05-27 15:55:42
