@@ -19,6 +19,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+from bookreader.spyder import spyder
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
@@ -27,6 +29,7 @@ urlpatterns = [
     url(r'^weixin/', include('weixin.urls')),
 
     ##set more
+    url(r'^test1/', spyder.test),
 ]
 
 if settings.DEBUG:

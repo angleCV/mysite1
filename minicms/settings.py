@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 	'twfabu',
     'focus',
     'weixin',
+    'tv',
 ]
 
 MIDDLEWARE_CLASSES = [
