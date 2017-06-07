@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static '/mainapp/css/resource.css' %}">
+	<script src="{% static '/mainapp/js/jQuery-2.1.4.min.js' %}"></script>
+
+</head>
+<body>
+	<div class="zbtw">
+
+		<!-- 下面无缝衔接上新添加的内容; 要求是单独放松一个请求, 用Ajax+Json包裹起来 -->
+        <ul id = newAppend>
+    <!--
+            {% block add_ls %}
+				{% for post in zblist %}
+			<li>
+				<dl>
+					<dt>{{post.realname}}</dt>
+					<dd>
+						<div class="img2">
+							<p>{{post.content | safe}}</p>
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+				{% endfor %}
+			{% endblock %}
+    -->
+
+        </ul>
+
+
+		<ul id="zblist">
+			<!-- 历史数据加载 -->
+			{% block c %}
+				{% for post in zblist %}
+			<li>
+				<dl>
+					<dt>{{post.realname}}</dt>
+					<dd>
+						<div class="img2">
+							<p>{{post.content | safe}}</p>
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+				{% endfor %}
+			{% endblock %}
+
+			<li>
+				<dl>
+					<dt>梵蒂冈电台</dt>
+					<dd>
+						<div class="img2">
+							<p>在现场热烈的掌声中，本次网络安全前沿技术高峰论坛落下了帷幕。在这两天中，多位网络安全的专家，围绕“关键信息基础设施安全”、“云计算与大数据安全保护”、“态势感知技术等网络安全发展趋势”为我们奉献了一场场精彩的演讲，让观众们受益匪浅。本次网络安全前沿技术高峰论坛图文直播到此结束，谢谢大家的陪伴</p>					
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>现场观众提问：各位专家认为在实践过程中，效率和准确性的关系是怎样的？刘峰：态势感知是实时的，数据是海量的，大数据通过实时关联感知数据的准确性.</p>						
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>现场观众就态势感知向专家提问。
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>王钊：在游戏安全方面，如果有丰富的态势感知数据，就可以提前发现游戏中的安全问题。
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>刘峰：态势感知中一个非常重要的难点就是算法，算出的结果要非常可靠，准确率要高。
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>对于如何培养态势感知的人才，董安波认为，可以组织工程师到高校为学生讲课，传授知识，为企业培养人才。
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>李森虎：态势感知存在三个无法解决的痛点，也是整个行业的三个痛点，即①对数据真伪的甄别困难；②数学模型：态势感知缺乏数学方面的人才；③不能明确态势感知能为客户带来什么好处。</p>						
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>赖洪昌：网络安全防护要靠对恶意攻击者形成威慑，把黑客揪出来。
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+			<li>
+				<dl>
+					<dt>阿登指挥部</dt>
+					<dd>
+						<div class="img2">
+							<p>现场专家简单介绍了他们在安全态势感知方面作出的努力。
+						</div>
+					</dd>
+				</dl>
+				<div class="cl"></div>
+			</li>
+
+<!-- 当前结果添加响应 -->
+		</ul>
+	</div>
+
+<script>
+
+$(document).ready(function () {
+	setInterval("start_append()",3000);
+});
+function start_append()
+{
+	$.ajax({
+		type:"GET",
+		url:"/twfb/new_append", //测试用,test_list
+		dataType:"json",
+		//data: {dat:dict},
+		success:function(res){
+			var li="<ul>";
+			//i表示在data中的索引位置，n表示包含的信息的对象
+			$.each(res.value, function(i, item){
+				//获取对象中属性为optionsValue的值
+				li += ('<li><dl><dt>'+ item["realname"] + '</dt><dd><div class="img2"><p>'+item["content"]+'</p></div></dd></dl><div class="cl"></div></li>');
+			});
+			li += "</ul>";
+			$('#zblist').prepend(li);
+		}
+	});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<div id="root" class="container">
+		    <div class="m-artical-action">
+		        <div class="artical-action-mid" id="action_mid"></div>
+            </div>
+		    <div id="top_nav" class="top-nav no-display">
+		        <div class="icon-back"></div>
+		        <div class="nav-title">返回书架</div>
+		    </div>
+		    <div id="fiction_chapter_title"></div>
+		    <div id="fiction_contailner" class="m-read-content"></div>
+		    <div class="m-button-bar">
+		        <ul class="u-tab">
+		            <li id="prev_button">上一章</li>
+		            <li id="next_button">下一章</li>
+		        </ul>
+		    </div>
+		    <div class="nav-pannel-bk font_container no-display"></div>
+		    <div class="nav-pannel font_container no-display" id="font_container">
+		        <div class="child-mod">
+		            <span>字号</span>
+		            <button id="large_font" class="font-size-button">大</button>
+		            <button id="samll_font" class="font-size-button">小</button>
+		        </div>
+		        <div class="child-mod bk-container-wrap">
+		            <span>背景</span>
+		        </div>
+		    </div>
+		    <div id="foot_nav" class="foot-nav no-display">
+		        <ul class="f-tab">
+		            <li class="tab-1">
+		                <div class="tab-wrap">
+		                    <div class="f-icon"></div>
+		                    <div class="f-title">目录</div>
+		                </div>
+		            </li>
+		            <li class="tab-2">
+		                <div class="tab-wrap">
+		                    <div class="f-icon"></div>
+		                    <div class="f-title">字体</div>
+		                </div>
+		            </li>
+		            <li class="tab-3 night_day day_icon">
+		                <div class="tab-wrap">
+		                    <div class="f-icon"></div>
+		                    <div class="f-title">白天</div>
+		                </div>
+		            </li>
+		            <li class="tab-4 night_day night_icon no-display">
+		                <div class="tab-wrap">
+		                    <div class="f-icon"></div>
+		                    <div class="f-title">夜间</div>
+		                </div>
+		            </li>
+		        </ul>
+		    </div>
+		</div>
+		<script src="lib/zepto.min.js"></script>
+		<script>
+			window.jQuery = $;
+		</script>
+		<script src="js/jquery.base64.js"></script>
+		<script src="js/jquery.jsonp.js"></script>
+		<script src="js/csschange.js"></script>
+	</body>
+</html>

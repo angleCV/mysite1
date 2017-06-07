@@ -1,0 +1,41 @@
+    	<style type="text/css">
+
+@font-face {
+    font-family: "iconfont1";
+    src: url("//at.alicdn.com/t/font_1448507037_6084561.eot?#iefix") format("embedded-opentype"), 
+    	 url("//at.alicdn.com/t/font_1448507037_6084561.woff") format("woff"), 
+    	 url("//at.alicdn.com/t/font_1448507037_6084561.ttf") format("truetype"), 
+    	 url("//at.alicdn.com/t/font_1448507037_6084561.svg#iconfont") format("svg");
+}
+
+.arrow {
+	line-height:16px !important;
+	display:inline-block;
+	transition: all 0.5s ;
+	font-family: "iconfont1" !important;
+}
+
+li:hover .arrow{
+	transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transition: all 0.5s ;
+	-moz-transition: all 0.5s ;
+	-webkit-transition: all 0.5s ;
+}
+
+.openplatform-nav .top-openplatform-nav ul li .sub-nav dl dt a {
+	color: #5eb5fe;
+}
+
+.openplatform-nav .top-openplatform-nav ul li .sub-nav{
+	  display: none;
+}
+</style>
+
+<style>
+    .page-tips i {
+        right:auto;
+        margin-left:10px;
+    }
+</style>
